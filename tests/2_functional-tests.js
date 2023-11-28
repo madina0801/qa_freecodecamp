@@ -113,7 +113,7 @@ suite('Functional Tests with Zombie.js', function () {
             browser.assert.success()
             browser.assert.text('span#name', 'Cristoforo')
             browser.assert.text('span#surname', 'Colombo')
-            browser.assert.element('span#dates', 1)
+            browser.assert.elements('span#dates', 1)
             done()
           })
       done();
@@ -125,7 +125,7 @@ suite('Functional Tests with Zombie.js', function () {
             browser.assert.success()
             browser.assert.text('span#name', 'Amerigo')
             browser.assert.text('span#surname', 'Vespucci')
-            browser.assert.element('span#dates', 1)
+            browser.assert.elements('span#dates', 1)
             done()
           })
       done();
