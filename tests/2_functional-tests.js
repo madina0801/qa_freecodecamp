@@ -43,8 +43,8 @@ suite('Functional Tests', function () {
           "surname": "Colombo"
         })
         .end(function (err, res) {
-          assert.equal(res.status, 200);
-          assert.equal(res.type, application/json, "Response should be JSON")
+          assert.equal(res.status, 200)
+          assert.equal(res.type, 'application/json', "Response should be JSON")
           assert.equal(
             res.body.name,
             'Cristoforo',
@@ -69,16 +69,16 @@ suite('Functional Tests', function () {
         })
         .end((err, res) => {
           assert.equal(res.status, 200)
-          assert.equal(res.type, application/json)
+          assert.equal(res.type, 'application/json', "Response should be JSON")
           assert.equal(
             res.body.name,
             'Giovanni',
-            "res.body.name should be Giovanni"
+            "res.body.name should be 'Giovanni'"
           )
           assert.equal(
             res.body.surname,
             'da Verrazzano',
-            "res.body.surname should be da Verrazzano"
+            "res.body.surname should be 'da Verrazzano'"
           )
         })
       done();
