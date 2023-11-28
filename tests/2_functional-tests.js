@@ -107,27 +107,49 @@ suite('Functional Tests with Zombie.js', function () {
 
   suite('"Famous Italian Explorers" form', function () {
     // #5
-    test('Submit the surname "Colombo" in the HTML form', function (done) {
-      browser.fill('surname', 'Colombo');
-      browser.pressButton('submit', function () {
+    // test('Submit the surname "Colombo" in the HTML form', function (done) {
+    //   browser.fill('surname', 'Colombo');
+    //   browser.pressButton('submit', function () {
+    //     browser.assert.success();
+    //     browser.assert.text('span#name', 'Cristoforo');
+    //     browser.assert.text('span#surname', 'Colombo');
+    //     browser.assert.elements('span#dates', 1);
+    //     done();
+    //   });
+    // });
+
+    test('submit "surname" : "Colombo" - write your e2e test...', function (done) {
+      browser.fill('surname', 'Colombo').pressButton('submit', function () {
         browser.assert.success();
         browser.assert.text('span#name', 'Cristoforo');
         browser.assert.text('span#surname', 'Colombo');
-        browser.assert.elements('span#dates', 1);
+        browser.assert.element('span#dates', 1);
+
         done();
       });
     });
     // #6
-    test('Submit the surname "Vespucci" in the HTML form', function (done) {
-      browser.fill('surname', 'Vespucci');
-      browser.pressButton('submit', () => {
+    // test('Submit the surname "Vespucci" in the HTML form', function (done) {
+    //   browser.fill('surname', 'Vespucci');
+    //   browser.pressButton('submit', () => {
+    //     browser.assert.success();
+    //     browser.assert.text('span#name', 'Amerigo');
+    //     browser.assert.text('span#surname', 'Vespucci');
+    //     browser.assert.elements('span#dates', 1);
+    //     done();
+    //   });
+    // });
+    test('submit "surname" : "Vespucci" - write your e2e test...', function (done) {
+      browser.fill('surname', 'Vespucci').pressButton('submit', function () {
         browser.assert.success();
         browser.assert.text('span#name', 'Amerigo');
         browser.assert.text('span#surname', 'Vespucci');
-        browser.assert.elements('span#dates', 1);
+        browser.assert.element('span#dates', 1);
+
         done();
       });
     });
+
   });
 });
 
