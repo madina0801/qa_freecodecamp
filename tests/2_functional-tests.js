@@ -48,12 +48,12 @@ suite('Functional Tests', function () {
           assert.equal(
             res.body.name,
             'Cristoforo',
-            "res.body.name shoudl be 'Cristoforo'"
+            "res.body.name should be 'Cristoforo'"
           )
           assert.equal(
             res.body.surname,
             'Colombo',
-            "res.body.surname shoudl be 'Colombo'"
+            "res.body.surname should be 'Colombo'"
           )
           done();
         });
@@ -72,11 +72,13 @@ suite('Functional Tests', function () {
           assert.equal(res.type, application/json)
           assert.equal(
             res.body.name,
-            'Giovanni'
+            'Giovanni',
+            "res.body.name should be Giovanni"
           )
           assert.equal(
             res.body.surname,
-            'da Verrazzano'
+            'da Verrazzano',
+            "res.body.surname should be da Verrazzano"
           )
         })
       done();
