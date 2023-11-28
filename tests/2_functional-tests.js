@@ -39,10 +39,22 @@ suite('Functional Tests', function () {
         .request(server)
         .keepOpen()
         .put('/travellers')
-
+        .send({
+          "surname": "Colombo"
+        })
         .end(function (err, res) {
-          assert.fail();
-
+          assert.equal(res.status, 200);
+          assert.equal(res.type, application/json, "Response should be JSON")
+          assert.equal(
+            res.body.name,
+            'Cristoforo',
+            "res.body.name shoudl be 'Cristoforo'"
+          )
+          assert.equal(
+            res.body.surname,
+            'Colombo',
+            "res.body.surname shoudl be 'Colombo'"
+          )
           done();
         });
     });
@@ -56,6 +68,8 @@ suite('Functional Tests', function () {
 });
 
 const Browser = require('zombie');
+const { application } = require('express');
+const { json } = require('body-parser');
 
 suite('Functional Tests with Zombie.js', function () {
   this.timeout(5000);
@@ -63,7 +77,7 @@ suite('Functional Tests with Zombie.js', function () {
 
 
   suite('Headless browser', function () {
-    test('should have a working "site" property', function() {
+    test('should have a working "site" property', function () {
       assert.isNotNull(browser.site);
     });
   });
